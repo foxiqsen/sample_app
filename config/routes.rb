@@ -1,15 +1,17 @@
 SamplePp::Application.routes.draw do
-  get "pages/home"
 
-  get "pages/contact"
-
-  get "pages/about"
-
+  match '/signup', :to => 'users#new'
   match '/contact', :to => 'pages#contact'
   match '/about', :to => 'pages#about'
   match '/help', :to => 'pages#help'
+  match '/home', :to => 'pages#home'
 
   root :to => 'pages#home'
+
+  get "users/new"
+  get "pages/home"
+  get "pages/contact"
+  get "pages/about"
 
 
   # The priority is based upon order of creation:
